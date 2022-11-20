@@ -6,30 +6,6 @@ Today we will use GitHub and Bizeps/Terraform to do so.
 
 Let's dive into the DevOps world. You can also work as a Team on this part since you can invite other to jointly work on a repo.
 
-## Get your repo ready
-
-We will need to set everything up so you have an own version of this repo within GitHub.
-
-1. Since you already cloned the repo to your local machine let's push it to your own GitHub organization. To do so first create a new organization within your GitHub. Navigate to 'github.com'. Make sure you are logged in with your user. 
-    1. There create an [organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/creating-a-new-organization-from-scratch).
-    1. Make sure you are in right directory on your local terminal '../AzureIoTHack' and enter:
-
-        ```shell
-        git add .
-        ```
-
-        ```shell
-        git commit -m "repo setup"
-        ```
-
-        ```shell
-        gh repo create <YOUR ORGANIZATION NAME>/AzureIoTHack --private --source=. --remote=upstream
-        ```
-
-    **Hint**: If you want to work jointly you need to add the other users to your repo like [this](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository).
-
-1. We are going to use GitHub Actions for the deployment. GitHub Actions allow you to automate, customize and execute your software development workflows right in your repo. To use this we need to activate the Actions in our repo. Navigate to `Settings > Actions` there check `Allow all actions and reusable workflows`. In the upper menue the tab *Actions* should appear.
-
 ## Using projects
 
 We want to use GitHub as our DevOps tool. So let's treat it like a real software development project and create some **user stories**. A user story is an informal, natural language description of a feature that we want to implement.
@@ -173,11 +149,21 @@ Infrastructure as Code s the managing and provisioning of infrastructure through
     git push --set-upstream origin terraform
     ```
 
+1. Repeat the steps from above to merge the new changes to the **main** branch. The changes in the `variables.tf` file will have triggered the GitHub Action. The first one will create all Azure resources and the second one will adapt them and deploy the Azure functions code. To see this more in detail navigate to the **Actions** tab and later on have a look at the Azure Portal.
 
-## GitHub Action Workflows
+1. Move the *Adapt the application running on the device* to **In Progress**.
 
-We did create some workflows for you, but we deliberately added some bugs - you will have to fix them.
+## Prepare your emulator
 
+One last step needs to be done. Currently the emulator sends and listens to the old IoTHub, but we did create a new one automatically. Therefore we need to get the new Connection String to the new Device.
 
+1. In your local terminal enter the following. Adapt `<YOUR PREFIX>` to whatever value you gave it in the yaml and the terraform file before:
+    ```shell
+    az iot hub device-identity connection-string show --device-id myPi --hub-name <YOUR PREFIX>iot-prod-iothub --output tsv
+    ```
+
+1. Navigate back to the emulator you should still have opened in your browser and replace the current connection string with the new one in line 15.
+
+1. Run the Emulator and make sure everything works. If you are unsure have a look at the resources in Azure - specifically at the metrics of your IoTHub and your Function App.
 
 Go to the [next steps](./07_pi_missing.md)
