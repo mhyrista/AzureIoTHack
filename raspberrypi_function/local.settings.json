@@ -4,6 +4,7 @@
     "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=xelasiotprodsa;AccountKey=0IPEJiq1v/s8SwetEOtt/33ZOQVwC+B+M4qRS2jgzhig9pN5quBSDNYwjJ6j+r0QB3uD80x3sQ23+ASt3axg1g==",
     "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
     "ConnectionString": "Endpoint=sb://iothub-ns-xelasiot-p-22976611-6ede85c0bd.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=3kYoNevQsKcpNmRuH4fuQpl8hu2uouNR22IcsuBjevA=;EntityPath=xelasiot-prod-iothub",
-    "FUNCTIONS_WORKER_RUNTIME": "python"
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "DeviceConnectionString": "HostName=xelasiotpihub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=BWT/U5b92Dbvh4Mbo2OUno1MZS9foTIUcVNyDmWLA+Y="
   }
 }
