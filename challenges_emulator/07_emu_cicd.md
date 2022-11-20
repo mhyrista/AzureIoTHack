@@ -148,6 +148,31 @@ Infrastructure as Code s the managing and provisioning of infrastructure through
 
 1. Within GitHub navigate to **Pull requests**. Select **Compare & pull request**. Now you can review the changes and hit **Create pull request**.
 
+1. Navigate to **Issues** to see that issue #4 has been closed. Also look in **Projects** to see that the workitem has been moved to **Done** for you.
+
+1. Move the *Edit the unique naming within Terraform* and *Push the changes to GitHub* to **In Progress**. These should be **#5** and **#6**.
+
+## Adapt the Terraform locally
+
+1. Let's first create a new branch for this task:
+    ```shell
+    git checkout -b terraform
+    ```
+1. Find the `variables.tf` in your repo.
+
+1. In line 9 change `<YOUR PREFIX>` to the value you chose in the last step. Make sure it is the same.
+
+1. Push the changes by entering the following.. If the issues/items you are working on are not **#5** & **#6** adapt the commit message:
+    ```shell
+    git add *
+    ```
+    ```shell
+    git commit -m "Closes #5, closes #6"
+    ```
+    ```shell
+    git push --set-upstream origin terraform
+    ```
+
 
 ## GitHub Action Workflows
 
