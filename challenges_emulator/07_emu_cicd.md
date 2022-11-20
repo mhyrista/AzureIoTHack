@@ -135,14 +135,18 @@ Infrastructure as Code s the managing and provisioning of infrastructure through
 
 1. In the `functions.yml` replace <YOUR PREFIX> with a prefix of your choice. It can be the same as the one you startet off with. You should have to replace it twice.
 
-1. Push the changes by entering the following in your terminal within the correct directory:
+1. Push the changes by entering the following in your terminal within the correct directory. If the issue/item you are working on is not **#4** adapt the commit message:
     ```shell
     git add *
     ```
     ```shell
-    git commit -m "add prefix"
+    git commit -m "Closes #4"
     ```
-    git 
+    ```shell
+    git push --set-upstream origin action
+    ```
+
+1. Within GitHub navigate to **Pull requests**. Select **Compare & pull request**. Now you can review the changes and hit **Create pull request**.
 
 
 ## GitHub Action Workflows
