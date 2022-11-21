@@ -20,7 +20,7 @@ ml_client = MLClient(
     DefaultAzureCredential(), subscription_id, resource_group, workspace
 )
 
-online_endpoint_name = "alex-endpoint21"
+online_endpoint_name = "alex-endpoint23"
 
 # create an online endpoint
 endpoint = ManagedOnlineEndpoint(
@@ -34,6 +34,8 @@ poller = ml_client.begin_create_or_update(endpoint)
 print(poller.result())
 
 model = ml_client.models.get("redbrakeqrwl9fj3", "1")
+print(model.id)
+
 
 # dockerbuild = BuildContext(dockerfile_path="../json/Dockerfile.json")
 
@@ -55,13 +57,13 @@ model = ml_client.models.get("redbrakeqrwl9fj3", "1")
 # poller = ml_client.environments.create_or_update(env_docker)
 # blue_deployment = ManagedOnlineDeployment(
 blue_deployment = ManagedOnlineDeployment(
-    name="alex21",
+    name="alex23",
     endpoint_name=online_endpoint_name,
-    model=model,
-    environment="azureml:AzureML-pytorch-1.10-ubuntu18.04-py38-cuda11-gpu:35",
-    code_configuration=CodeConfiguration(
-        code="./",
-        scoring_script="score.py"),
+    model=model.id,
+    # environment="azureml:AzureML-pytorch-1.10-ubuntu18.04-py38-cuda11-gpu:35",
+    # code_configuration=CodeConfiguration(
+    #     code="./",
+    #     scoring_script="score.py"),
     instance_type="Standard_DS2_v2",
     instance_count=3,
 )
