@@ -5,6 +5,8 @@
     "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
     "ConnectionString": "Endpoint=sb://iothub-ns-xelasiot-p-22976611-6ede85c0bd.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=3kYoNevQsKcpNmRuH4fuQpl8hu2uouNR22IcsuBjevA=;EntityPath=xelasiot-prod-iothub",
     "FUNCTIONS_WORKER_RUNTIME": "python",
-    "DeviceConnectionString": "HostName=xelasiotpihub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=BWT/U5b92Dbvh4Mbo2OUno1MZS9foTIUcVNyDmWLA+Y="
+    "DeviceConnectionString": "HostName=xelasiotpihub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=BWT/U5b92Dbvh4Mbo2OUno1MZS9foTIUcVNyDmWLA+Y=",
+    "AzureMLurl": "http://3738065f-cbbe-4e7c-a075-c715eb7b79c8.westeurope.azurecontainer.io/score",
+    "AzureMLkey": "KPCchFMubf7H74TP8hGAsWFCNx2tbdyV"
   }
 }
