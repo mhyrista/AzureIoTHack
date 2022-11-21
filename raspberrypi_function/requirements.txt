@@ -6,4 +6,3 @@ azure-functions
 azure-iot-hub
 azure-eventhub
 azure-iot-device
-azure-iot
