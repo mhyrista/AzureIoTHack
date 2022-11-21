@@ -5,7 +5,7 @@
       "type": "eventHubTrigger",
       "name": "events",
       "direction": "in",
-      "eventHubName": "xelasiotpihub",
+      "eventHubName": "nikeiot-prod-iothub",
       "connection": "ConnectionString",
       "cardinality": "many",
       "consumerGroup": "$Default",
