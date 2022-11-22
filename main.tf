@@ -143,6 +143,7 @@ resource "azurerm_function_app" "prod" {
   app_settings = {
     "AzureWebJobsDashboard"          = "UseDevelopmentStorage=true",
     "APPINSIGHTS_INSTRUMENTATIONKEY" = azurerm_application_insights.prod.instrumentation_key,
+    "FUNCTIONS_WORKER_RUNTIME"       = "python"
   }
 
   site_config {
