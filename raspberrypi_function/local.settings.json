@@ -1,11 +1,11 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=xelasiotprodsa;AccountKey=0IPEJiq1v/s8SwetEOtt/33ZOQVwC+B+M4qRS2jgzhig9pN5quBSDNYwjJ6j+r0QB3uD80x3sQ23+ASt3axg1g==",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=nikeiotprodsa;AccountKey=co4vb/2bUvn7EbplWbnsHfLR4m3r4qe81fftTpwbtC5l8xNei7hCzUQc/9I6NgENF6vwIASKtbza+AStRYEUKw==",
     "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
-    "ConnectionString": "Endpoint=sb://iothub-ns-xelasiot-p-22976611-6ede85c0bd.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=3kYoNevQsKcpNmRuH4fuQpl8hu2uouNR22IcsuBjevA=;EntityPath=xelasiot-prod-iothub",
+    "ConnectionString": "Endpoint=sb://iothub-ns-nikeiot-pr-22998325-76b06c8df7.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=o36dmlm9VnLEX8+HLaphcs9Nh1STooSKM6P1o8AybGQ=;EntityPath=nikeiot-prod-iothub",
     "FUNCTIONS_WORKER_RUNTIME": "python",
-    "DeviceConnectionString": "HostName=xelasiotpihub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=BWT/U5b92Dbvh4Mbo2OUno1MZS9foTIUcVNyDmWLA+Y=",
+    "DeviceConnectionString": "HostName=nikeiot-prod-iothub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=o36dmlm9VnLEX8+HLaphcs9Nh1STooSKM6P1o8AybGQ=",
     "AzureMLurl": "http://3738065f-cbbe-4e7c-a075-c715eb7b79c8.westeurope.azurecontainer.io/score",
     "AzureMLkey": "KPCchFMubf7H74TP8hGAsWFCNx2tbdyV"
   }
