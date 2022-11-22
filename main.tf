@@ -117,25 +117,20 @@ resource "azurerm_iothub" "prod" {
 }
 
 # Create Azure service plan as compute resource on which the Azure function will run
-resource "azurerm_app_service_plan" "prod" {
+resource "azurerm_service_plan" "prod" {
   name                = "${var.prefix}iot-prod-asp"
   location            = azurerm_resource_group.prod.location
   resource_group_name = azurerm_resource_group.prod.name
-  kind                = "Linux"
-  reserved            = true
-
-  sku {
-    tier = "Dynamic"
-    size = "Y1"
-  }
+  os_type             = "Linux"
+  sku_name            = "Y1"
 }
 
 # Create Azure functions (https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/function_app)
-resource "azurerm_function_app" "prod" {
+resource "azurerm_linux_function_app" "prod" {
   name                       = "${var.prefix}iot-prod-fa"
   location                   = azurerm_resource_group.prod.location
   resource_group_name        = azurerm_resource_group.prod.name
-  app_service_plan_id        = azurerm_app_service_plan.prod.id
+  service_plan_id            = azurerm_service_plan.prod.id
   storage_account_name       = azurerm_storage_account.prod.name
   storage_account_access_key = azurerm_storage_account.prod.primary_access_key
   os_type                    = "linux"
@@ -143,6 +138,7 @@ resource "azurerm_function_app" "prod" {
   app_settings = {
     "AzureWebJobsDashboard"          = "UseDevelopmentStorage=true",
     "APPINSIGHTS_INSTRUMENTATIONKEY" = azurerm_application_insights.prod.instrumentation_key,
+    FUNCTIONS_WORKER_RUNTIME         = "python",
   }
 
   site_config {
