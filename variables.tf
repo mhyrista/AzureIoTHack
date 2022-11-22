@@ -5,6 +5,6 @@ variable "location" {
 
 variable "prefix" {
   type        = string
-  default     = "nool"
+  default     = "numb"
   description = "The prefix used for all resources"
 }

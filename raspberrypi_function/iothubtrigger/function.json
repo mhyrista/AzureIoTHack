@@ -5,7 +5,7 @@
       "type": "eventHubTrigger",
       "name": "events",
       "direction": "in",
-      "eventHubName": "nooliot-prod-iothub",
+      "eventHubName": "numbiot-prod-iothub",
       "connection": "ConnectionString",
       "cardinality": "many",
       "consumerGroup": "$Default",
