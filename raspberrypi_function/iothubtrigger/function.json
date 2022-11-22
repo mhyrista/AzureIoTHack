@@ -5,7 +5,7 @@
       "type": "eventHubTrigger",
       "name": "events",
       "direction": "in",
-      "eventHubName": "numbiot-prod-iothub",
+      "eventHubName": "fartyiot-prod-iothub",
       "connection": "ConnectionString",
       "cardinality": "many",
       "consumerGroup": "$Default",
